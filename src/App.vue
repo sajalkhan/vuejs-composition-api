@@ -1,19 +1,19 @@
 <template>
   <section class="p-main">
     <div class="p-main__container">
-      <TimeLine />
+      <TimeLineDetails />
     </div>
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import TimeLine from "./components/atoms/TimeLine.vue";
+import TimeLineDetails from "@/components/organisms/timeline-details/index.vue";
 
 export default defineComponent({
   name: "App",
   components: {
-    TimeLine,
+    TimeLineDetails,
   },
 });
 </script>
