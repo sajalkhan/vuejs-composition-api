@@ -1,27 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <section class="p-main">
+    <div class="p-main__container">
+      <TimeLine />
+    </div>
+  </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import TimeLine from "./components/atoms/TimeLine.vue";
 
 export default defineComponent({
   name: "App",
   components: {
-    HelloWorld,
+    TimeLine,
   },
 });
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.p-main {
+  height: 100%;
+  width: 100%;
+
+  &__container {
+    padding: 50px 100px;
+  }
 }
 </style>
