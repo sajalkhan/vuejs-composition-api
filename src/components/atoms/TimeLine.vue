@@ -32,6 +32,10 @@ export default defineComponent({
     const periods: period[] = ["Today", "This Week", "This Month"];
     const currentPeriod = ref<period>("Today");
 
+    const setPeriod = (period: period) => {
+      currentPeriod.value = period; // to update ref value use variable.value
+    };
+
     const posts = computed(() => {
       return [today, ThisWeek, ThisMonth].filter((post) => {
         switch (currentPeriod.value) {
@@ -49,10 +53,6 @@ export default defineComponent({
         }
       });
     });
-
-    const setPeriod = (period: period) => {
-      currentPeriod.value = period; // to update ref value use variable.value
-    };
 
     return {
       posts,
