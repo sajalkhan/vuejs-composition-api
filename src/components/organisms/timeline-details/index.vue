@@ -11,13 +11,21 @@ import TimeLineList from "@/components/molecules/timeline-List/index.vue";
 const className = "o-timeLineDetails";
 type period = "Today" | "This Week" | "This Month";
 
+const delay = () => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, 2000);
+  });
+};
+
 export default defineComponent({
   name: "TimeLineDetails",
   components: {
     Navbar,
     TimeLineList,
   },
-  setup() {
+
+  async setup() {
+    await delay(); // it's use for only check suspense use cases
     const currentPeriod = ref<period>("Today");
 
     const setPeriod = (period: period) => {
