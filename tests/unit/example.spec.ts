@@ -14,7 +14,7 @@ describe("NavBar Component", () => {
 });
 
 describe("TimeLineItem Component", () => {
-  it("Contains Todays date and time", async () => {
+  it("Contains Todays date and title", async () => {
     const wrapper = mount(TimeLintItem);
 
     await wrapper.setProps({
