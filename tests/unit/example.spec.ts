@@ -4,7 +4,7 @@ import NavBar from "@/components/atoms/navbar/index.vue";
 import TimeLintItem from "@/components/atoms/timeLine-item/index.vue";
 import TimeLineList from "@/components/molecules/timeline-List/index.vue";
 import TimeLineDetails from "@/components/organisms/timeline-details/index.vue";
-import { today, ThisWeek } from "@/mocks";
+import { Today, ThisWeek } from "@/mocks";
 
 describe("NavBar Component", () => {
   it("Contains Today items", () => {
@@ -18,12 +18,12 @@ describe("TimeLineItem Component", () => {
     const wrapper = mount(TimeLintItem);
 
     await wrapper.setProps({
-      title: today.title,
-      date: today.created.format("Do MMM"),
+      title: Today.title,
+      date: Today.created.format("Do MMM"),
     });
 
-    expect(wrapper.html()).toContain(today.title);
-    expect(wrapper.html()).toContain(today.created.format("Do MMM"));
+    expect(wrapper.html()).toContain(Today.title);
+    expect(wrapper.html()).toContain(Today.created.format("Do MMM"));
   });
 });
 
@@ -40,7 +40,7 @@ describe("TimeLineList Component", () => {
 });
 
 describe("TimeLineDetails Component", () => {
-  it("Render today date", async () => {
+  it("Render Today date", async () => {
     const wrapper = mount(TimeLineDetails);
     wrapper.get('[data-test="This Week"]').trigger("click");
     await nextTick();

@@ -9,7 +9,7 @@ import moment from "moment";
 import props from "./props";
 
 import { defineComponent, computed } from "vue";
-import { today, ThisWeek, ThisMonth } from "@/mocks";
+import { Today, ThisWeek, ThisMonth } from "@/mocks";
 import TimeLineItem from "@/components/atoms/timeLine-item/index.vue";
 
 const className = "m-timelineList";
@@ -20,7 +20,7 @@ export default defineComponent({
   props,
   setup(props) {
     const posts = computed(() => {
-      return [today, ThisWeek, ThisMonth].filter((post) => {
+      return [Today, ThisWeek, ThisMonth].filter((post) => {
         switch (props.currentPeriod) {
           case "Today":
             return post.created.isAfter(moment().subtract(1, "day"));

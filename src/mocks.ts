@@ -6,7 +6,7 @@ export interface Post {
   created: moment.Moment;
 }
 
-export const today: Post = {
+export const Today: Post = {
   id: "1",
   title: "Today",
   created: moment(),
