@@ -1,5 +1,5 @@
 <template>
-  <div class="p-home__container">
+  <div class="p-home">
     <Suspense>
       <template #default>
         <TimeLineDetails />
@@ -27,11 +27,6 @@ export default defineComponent({
 
 <style lang="scss">
 .p-home {
-  height: 100%;
-  width: 100%;
-
-  &__container {
-    padding: 50px 100px;
-  }
+  padding: 50px 100px;
 }
 </style>

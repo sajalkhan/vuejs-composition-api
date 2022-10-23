@@ -7,10 +7,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, onMounted } from "vue";
 
 export default defineComponent({
   name: "SpinnerContent",
+
+  setup() {
+    onMounted(() => {
+      const element = document.querySelector<HTMLDivElement>(".a-button");
+      if (element) {
+        element.style.display = "none";
+
+        setTimeout(() => {
+          element.style.display = "block";
+        }, 2000);
+      }
+    });
+  },
 });
 </script>
 
